@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    overflow: hidden;
+}
+
+#sopra {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+
+/* Nascondere la scrollbar predefinita */
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Stile della scrollbar */
+
+.scrollbar {
+    position: relative;
+    overflow-x: scroll;
+    /* Scroll orizzontale */
+    overflow-y: hidden;
+    /* Nascondere lo scorrimento verticale */
+    height: 8px;
+    /* Altezza della scrollbar */
+}
+
+
+/* ===== Scrollbar CSS ===== */
+
+
+/* Firefox */
+
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #74aa9c #ffffff00;
+}
+
+
+/* Chrome, Edge, and Safari */
+
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #ffffff00;
+    border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #74aa9c;
+    border-radius: 10px;
+    border: 2px solid #ffffff00;
+}
+
+
+/* Body */
+
+body {
+    background-color: #191919;
+    color: #ffffff;
+    font-family: "Helvetica Neue", sans-serif;
+    background-image: url("img/wchatgpt.jpg");
+    background-size: cover;
+    height: 100vh;
+    background-position: top;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 0 15%;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 2em 0 1em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+#chatlog {
+    height: 400px;
+    overflow-y: scroll;
+    padding: 1em;
+    background-color: #2a2a2ab9;
+    border-radius: 5px;
+    overflow-x: hidden;
+}
+
+#chatlog p {
+    --margin: 1em 0;
+}
+
+form {
+    margin-top: 2em;
+    display: flex;
+}
+
+#userInput {
+    height: auto;
+    min-height: 50px;
+    overflow: auto;
+    width: 100%;
+    flex-grow: 1;
+    padding: 0.8em;
+    border: none;
+    background-color: #505050;
+    color: #ffffff;
+    font-size: 1.1em;
+    border-radius: 5px 0 0 5px;
+    resize: none;
+}
+
+.bott {
+    background-color: #74aa9c;
+    color: #ffffff;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.bott-r {
+    padding: 0.8em 1.2em;
+    border-radius: 0 5px 5px 0;
+}
+
+.bott-l {
+    width: 50px;
+    height: 50px;
+    padding: 1em;
+    border-radius: 50%;
+    margin-right: 1em;
+}
+
+.bott:hover {
+    background-color: #547d72;
+}
+
+
+/* Chat bubble stili */
+
+.chat-bubble {
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.chat-bubble p {
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.1em;
+    line-height: 1.2;
+    box-shadow: 0px 0px 3px 0px rgb(133 133 133);
+}
+
+.user-bubble {
+    justify-content: flex-end;
+}
+
+.user-bubble p {
+    background: #3d7a6a;
+    color: #fff;
+}
+
+.chatbot-bubble {
+    justify-content: flex-start;
+}
+
+.chatbot-bubble p {
+    background: #2a2a2a;
+    color: #fff;
+}
+
+.error-bubble {
+    justify-content: flex-start;
+}
+
+.error-bubble p {
+    background: rgb(66, 45, 45);
+    color: #fff;
+}
+
+
+/* Media Query for Mobile Devices */
+
+@media screen and (max-width: 1240px) {
+    body {
+        padding: 0 10%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    body {
+        padding: 0 10px;
+    }
+    h1 {
+        font-size: 1.5em !important;
+    }
+    #chatlog {
+        min-height: 60%;
+    }
+    #userInput {
+        font-size: 1em !important;
+    }
+    button[type="submit"] {
+        padding: 0.6em 1em;
+        font-size: 1em;
+    }
+    .chat-bubble p {
+        font-size: 1em;
+    }
+}
